@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<page id="Page@28680319:1461118471867" name="Start" version="6.0.1">
+<element height="50" id="Element@33748:1461118471866" name="Start Of Call" start_of_call="true" type="Page Entry" width="130" x="250" y="30">
+<exit_states>
+<exit_state name="next" target="Element@3582668:1461119971348"/>
+</exit_states>
+</element>
+<element height="50" id="Element@3582668:1461119971348" name="CVP Subdialog Start_01" src="com.audium.server.voiceElement.internal.CiscoSubdialogStartElement" type="Subdialog Start" width="205" x="212" y="155">
+<exit_states>
+<exit_state name="done" target="Element@10239295:1461124567608"/>
+</exit_states>
+</element>
+<element height="50" id="Element@28963781:1461124053702" name="CheckBusinessHours_01" src="com.montiefiore.ivr.elements.CheckBusinessHoursDecisionElement" type="Decision Element" width="205" x="212" y="661">
+<exit_states>
+<exit_state name="Open" target="Element@6568572:1461125494801"/>
+<exit_state name="Closed" target="Element@28629339:1461129372164"/>
+</exit_states>
+</element>
+<element height="50" id="Element@31134218:1461124144995" name="Greeting" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="112" x="259" y="402">
+<exit_states>
+<exit_state name="done" target="Element@19589772:1461124345835"/>
+</exit_states>
+</element>
+<element height="50" id="Element@19589772:1461124345835" name="LanguageMenu" src="com.audium.server.voiceElement.menu.MFoundation2OptionMenu" type="Voice Element" width="175" x="227" y="512">
+<exit_states>
+<exit_state name="option1" target="Element@28963781:1461124053702"/>
+<exit_state name="option2" target="Element@26151348:1461124784546"/>
+<exit_state name="max_nomatch" target="Element@28963781:1461124053702">
+<bendpoint>
+<dim1 x="56" y="56"/>
+<dim2 x="61" y="-81"/>
+</bendpoint>
+</exit_state>
+<exit_state name="max_noinput" target="Element@28963781:1461124053702">
+<bendpoint>
+<dim1 x="-95" y="81"/>
+<dim2 x="-90" y="-56"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="50" id="Element@10239295:1461124567608" name="SetDefaultAudioPath" src="com.audium.server.action.context.ApplicationModifier" type="Action Element" width="212" x="209" y="269">
+<exit_states>
+<exit_state name="done" target="Element@31134218:1461124144995"/>
+</exit_states>
+</element>
+<element height="50" id="Element@26151348:1461124784546" name="SetSpanishAudioPath" src="com.audium.server.action.context.ApplicationModifier" type="Action Element" width="248" x="-150" y="612">
+<exit_states>
+<exit_state name="done" target="Element@28963781:1461124053702"/>
+</exit_states>
+</element>
+<element height="50" id="Element@6568572:1461125494801" name="MainMenu" src="com.audium.server.voiceElement.form.MFoundationForm" type="Voice Element" width="120" x="256" y="762">
+<exit_states>
+<exit_state name="done" target="Element@15962631:1461128997255"/>
+<exit_state name="max_nomatch" target="Element@15962631:1461128997255">
+<bendpoint>
+<dim1 x="86" y="62"/>
+<dim2 x="86" y="-45"/>
+</bendpoint>
+</exit_state>
+<exit_state name="max_noinput" target="Element@15962631:1461128997255">
+<bendpoint>
+<dim1 x="-98" y="54"/>
+<dim2 x="-98" y="-53"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="50" id="Element@4395975:1461125683084" name="PatientMenu" src="com.audium.server.voiceElement.form.MFoundationForm" type="Voice Element" width="132" x="249" y="1002">
+<exit_states>
+<exit_state name="done" target="Element@29326521:1461125856278"/>
+<exit_state name="max_nomatch" target="Element@29326521:1461125856278">
+<bendpoint>
+<dim1 x="89" y="62"/>
+<dim2 x="89" y="-63"/>
+</bendpoint>
+</exit_state>
+<exit_state name="max_noinput" target="Element@29326521:1461125856278">
+<bendpoint>
+<dim1 x="-65" y="64"/>
+<dim2 x="-65" y="-61"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="50" id="Element@29326521:1461125856278" name="Chk_PatientMenu" type="Decision" width="162" x="234" y="1127">
+<exit_states>
+<exit_state name="appointment" target="Element@13769161:1461127513388"/>
+<exit_state name="directions" target="Element@32110294:1461127964198"/>
+<exit_state name="others" target="Element@18616738:1461128288579"/>
+</exit_states>
+</element>
+<element height="50" id="Element@13769161:1461127513388" name="SetICMVars_01" src="com.montiefiore.ivr.elements.SetICMVars" type="Action Element" width="146" x="533" y="1025">
+<exit_states>
+<exit_state name="done" target="Element@24075291:1461128656948"/>
+</exit_states>
+</element>
+<element height="50" id="Element@32110294:1461127964198" name="DirectionMenu" src="com.audium.server.voiceElement.menu.MFoundation2OptionMenu" type="Voice Element" width="175" x="228" y="1275">
+<exit_states>
+<exit_state name="option1" target="Element@32110294:1461127964198">
+<bendpoint>
+<dim1 x="0" y="50"/>
+<dim2 x="0" y="50"/>
+</bendpoint>
+<bendpoint>
+<dim1 x="112" y="50"/>
+<dim2 x="112" y="50"/>
+</bendpoint>
+<bendpoint>
+<dim1 x="112" y="0"/>
+<dim2 x="112" y="0"/>
+</bendpoint>
+</exit_state>
+<exit_state name="option2" target="Element@20634947:1461128262835"/>
+<exit_state name="max_nomatch" target="Element@18616738:1461128288579"/>
+<exit_state name="max_noinput" target="Element@18616738:1461128288579">
+<bendpoint>
+<dim1 x="101" y="-62"/>
+<dim2 x="-171" y="-28"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="50" id="Element@12003833:1461128220093" name="RepeatPateientMenu" type="Page Entry" width="187" x="-70" y="995">
+<exit_states>
+<exit_state name="next" target="Element@4395975:1461125683084"/>
+</exit_states>
+</element>
+<element height="50" id="Element@20634947:1461128262835" name="RepeatPateientMenu" type="Page Connector" width="187" x="120" y="1389">
+<page_connector target="Element@12003833:1461128220093">RepeatPateientMenu<config/>
+</page_connector>
+</element>
+<element height="50" id="Element@18616738:1461128288579" name="SetICMVars_02" src="com.montiefiore.ivr.elements.SetICMVars" type="Action Element" width="146" x="533" y="1139">
+<exit_states>
+<exit_state name="done" target="Element@24075291:1461128656948"/>
+</exit_states>
+</element>
+<element height="50" id="Element@24075291:1461128656948" name="TransferAgent" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="174" x="842" y="1047">
+<exit_states>
+<exit_state name="done" target="Element@11075097:1461128801494"/>
+</exit_states>
+</element>
+<element height="50" id="Element@11075097:1461128801494" name="CVP Subdialog Return_01" src="com.audium.server.voiceElement.internal.CiscoSubdialogReturnElement" type="Subdialog Return" width="217" x="820" y="1181">
+<exit_states>
+<exit_state name="done"/>
+</exit_states>
+</element>
+<element height="50" id="Element@15962631:1461128997255" name="Chk_MainMeni" type="Decision" width="146" x="243" y="869">
+<exit_states>
+<exit_state name="patient" target="Element@4395975:1461125683084"/>
+<exit_state name="provider" target="Element@7320082:1461129181740"/>
+</exit_states>
+</element>
+<element height="50" id="Element@7320082:1461129181740" name="SetICMVars_03" src="com.montiefiore.ivr.elements.SetICMVars" type="Action Element" width="146" x="533" y="886">
+<exit_states>
+<exit_state name="done" target="Element@24075291:1461128656948"/>
+</exit_states>
+</element>
+<element height="50" id="Element@28629339:1461129372164" name="TransferTo_9143332044" src="com.audium.server.voiceElement.transfer.MTransfer" type="Voice Element" width="204" x="590" y="661">
+<exit_states>
+<exit_state name="done" target="Element@16412775:1461129724845"/>
+<exit_state name="busy" target="Element@2856952:1461129499637"/>
+<exit_state name="noanswer" target="Element@2856952:1461129499637">
+<bendpoint>
+<dim1 x="152" y="-88"/>
+<dim2 x="-186" y="-27"/>
+</bendpoint>
+</exit_state>
+<exit_state name="phone_error" target="Element@2856952:1461129499637">
+<bendpoint>
+<dim1 x="174" y="29"/>
+<dim2 x="-164" y="90"/>
+</bendpoint>
+</exit_state>
+</exit_states>
+</element>
+<element height="50" id="Element@2856952:1461129499637" name="ClosedBusinessHours" src="com.audium.server.voiceElement.audio.MAudio" type="Voice Element" width="189" x="1058" y="646">
+<exit_states>
+<exit_state name="done" target="Element@16412775:1461129724845"/>
+</exit_states>
+</element>
+<element height="50" id="Element@16412775:1461129724845" type="Hang Up" width="109" x="888" y="814"/>
+</page>

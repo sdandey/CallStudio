@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<action_element id="Element@7320082:1461129181740" name="SetICMVars_03" version="6.0.1">
+<config>
+<settings>
+<setting name="CallType English">MMGEVA_EVAX_OTHR_EVAX_PROV_E_CT</setting>
+<setting name="CallType Spanish"/>
+</settings>
+</config>
+</action_element>

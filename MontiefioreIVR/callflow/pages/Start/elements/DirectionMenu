@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<voice_element id="Element@32110294:1461127964198" name="DirectionMenu" version="6.0.1">
+<config>
+<settings>
+<setting name="noinput_timeout">5s</setting>
+<setting name="max_noinput_count">3</setting>
+<setting name="max_nomatch_count">3</setting>
+<setting name="confidence_level">0.40</setting>
+<setting name="modal">false</setting>
+<setting name="option1_dtmf"/>
+<setting name="option1_voice"/>
+<setting name="option1_value"/>
+<setting name="option2_dtmf"/>
+<setting name="option2_voice"/>
+<setting name="option2_value"/>
+</settings>
+<audio>
+<audio_group barge_in="true" count="1" name="initial_audio_group">
+<audio_item name="audio item 1" type="static">
+<audio_item_notes/>
+<audio_item_config view_id="default">
+<static default_audio_path="true" uri="EVA_Directions.wav"><![CDATA[We are located at 3219 Tremont Avenue between Waterbury and Puritan Avenue.  If you are coming by bus, take the #40 or #42 bus to Waterbury Avenue. If by train, take the #6 to Westchester Square folled by the #40 or #42 bus going North East towards Waterbury Avenue. To repeat this information press 1.  To return to a main menu, press the star key.]]></static>
+</audio_item_config>
+</audio_item>
+</audio_group>
+</audio>
+</config>
+</voice_element>

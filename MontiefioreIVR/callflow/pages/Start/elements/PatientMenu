@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<voice_element id="Element@4395975:1461125683084" name="PatientMenu" version="6.0.1">
+<config>
+<settings>
+<setting name="inputmode">both</setting>
+<setting name="noinput_timeout">5s</setting>
+<setting name="max_noinput_count">1</setting>
+<setting name="max_nomatch_count">1</setting>
+<setting name="confidence_level">0.40</setting>
+<setting name="voice_grammar"/>
+<setting name="dtmf_grammar"/>
+<setting name="voice_keyword"/>
+<setting name="dtmf_keypress">1[Schedule]</setting>
+<setting name="dtmf_keypress">2[Directions]</setting>
+<setting name="dtmf_keypress">3[Others]</setting>
+<setting name="help_voice_keyword"/>
+<setting name="help_dtmf_keypress"/>
+<setting name="modal">false</setting>
+<setting name="field_name">foundation_fld</setting>
+<setting name="slot_name"/>
+<setting name="slot_element_data"/>
+<setting name="maxnbest">1</setting>
+<setting name="secure_logging">false</setting>
+</settings>
+<audio>
+<audio_group barge_in="true" count="1" name="initial_audio_group">
+<audio_item name="audio item 1" type="static">
+<audio_item_notes/>
+<audio_item_config view_id="default">
+<static default_audio_path="true" uri="EVA_Patient_Menu.wav"><![CDATA[If you are a new patient calling to schedule an appointment press 1, for the address and directions press 3, for all other press 3 or remain on the line for assistance]]></static>
+</audio_item_config>
+</audio_item>
+</audio_group>
+</audio>
+</config>
+</voice_element>

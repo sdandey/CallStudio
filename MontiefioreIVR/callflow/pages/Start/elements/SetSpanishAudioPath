@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<action_element id="Element@26151348:1461124784546" name="SetSpanishAudioPath" version="6.0.1">
+<config>
+<settings>
+<setting name="maintainer"/>
+<setting name="language"/>
+<setting name="encoding"/>
+<setting name="default_audio_path">http://{Data.Session.AudioPath}//MediaFiles/Spanish</setting>
+<setting name="remove_session_data"/>
+</settings>
+<session_data>
+<data create_when="After" name="S_IsSpanishSelected">true</data>
+</session_data>
+</config>
+</action_element>
