@@ -1,0 +1,100 @@
+[
+	{
+		"dnisNumber":"7928115",
+		
+		"isLanguageMenuEnabled":true,
+		"closedHours":{
+			"isClosedHoursEnabled":true,
+			"transferNumber":"9143332044"
+		},
+		"greetingPrompt": {
+			"promptName":"EVA_Greeting.wav",
+			"promptText":"Thank you for calling Eastern Vascular Associates at Montifore Medical Center, If this is a medical emergency, please hang up and dial 911 or go to the nearest emergency room",
+			"bargein":false
+		},
+		"mainMenuName":"mainmenu",
+		"menus":{
+			"mainmenu":{
+				"defaultAudioGroup":{
+					"prompts":[
+						{
+							"promptName":"GLOB_Patient_Provider_MENU.wav",
+							"promptText":"if you are a patient press 1, if you are a provider press 2",
+							"bargein":true
+						}
+					]
+				},
+					"maxTries":"1",
+					"menuOptions":{
+						"1":{
+							"menuOptionNumber":1,
+							"optionType":"SUBMENU",
+							"subMenu":{
+								"menuName":"patientmenu"
+							}
+						},
+						"2":{
+							"menuOptionNumber":2,
+							"optionType":"SETICMVARS",
+							"setICMVars":{
+								"callTypeForEnglish":"MMGEVA_EVAX_OTHR_EVAX_PROV_E_CT",
+								"priority":"5",
+								"transferPrompt":{
+									"promptName":"Trans_Agent.wav",
+									"promptText":"Please stay on the line while we connect to our associate. Your call may be monitored and recorded for quality assurance",
+									"bargein":false
+								}
+							}
+						}
+					}
+				},
+			"patientmenu":{
+				"defaultAudioGroup":{
+					"prompts":[
+						{
+							"promptName":"EVA_Patient_Menu.wav",
+							"promptText":"if you are a new patient calling to schedule an appointment press 1, For the address and directions press 2, for all other matters press 3 or remain on the line for assistance",
+							"bargein":true
+						}
+					]
+					},
+					"maxTries":"1",
+					"menuOptions":{
+						"1":{
+							"menuOptionNumber":1,
+							"optionType":"SETICMVARS",
+							"transferPrompt":{
+								"promptName":"Trans_Agent.wav",
+								"promptText":"Please stay on the line while we connect to our associate. Your call may be monitored and recorded for quality assurance",
+								"bargein":false
+							}
+						},
+						"2":{
+							"menuOptionNumber":2,
+							"optionType":"INFORMATIONPROMPT",
+							"noOfRepeats":2,
+							"informationPrompt":{
+								"prompt":{
+									"promptName":"EVA_Directions.wav",
+									"promptText":"We are location at 3219 Tremont Avenue Between Waterbury and Puritan Avenue. If you are coming by bus, take the #40 or #42 bus to Waterbury Avenue, if by train, take the #6 to Westchester Square folled by the #40 or #42 bus going North East towards Waterbury Avenue. To repeat this information press 1, to return to the main menu, press the start key."
+								}
+							}
+						},
+						"3":{
+							"menuOptionNumber":3,
+							"optionType":"SETICMVARS",
+							"setICMVars":{
+								"callTypeForEnglish":"MMGEVA_EVAX_GENL_EVAX_MEMB_E_CT",
+								"callTypeForSpanish":"MMGEVA_EVAX_GENL_EVAX_MEMB_S_CT",
+								"transferPrompt":{
+									"promptName":"Trans_Agent.wav",
+									"promptText":"Please stay on the line while we connect to our associate. Your call may be monitored and recorded for quality assurance",
+									"bargein":false
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+]
