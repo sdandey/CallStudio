@@ -1,17 +1,19 @@
 package com.montiefiore.ivr.dao;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.montiefiore.ivr.vxml.DynamicFlow;
-import com.sun.istack.internal.logging.Logger;
 
 public class DynamicFlowService {
 
@@ -39,14 +41,14 @@ public class DynamicFlowService {
 					}
 				}
 				
-				logger.severe("No Dynamic Flow Configuration found for DNIS:" + dnisNumber);
+				logger.error("No Dynamic Flow Configuration found for DNIS:" + dnisNumber);
 				return null;
 			} catch (JsonIOException e) {
 				e.printStackTrace();
 				return null;
 			} catch (JsonSyntaxException e) {
 				e.printStackTrace();
-				logger.severe("Error in the json Syntax");
+				logger.error("Error in the json Syntax");
 				return null;
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -54,7 +56,7 @@ public class DynamicFlowService {
 			}
 		}
 		else{
-			logger.severe("dynamicmenu.json file not found");
+			logger.error("dynamicmenu.json file not found");
 			return null;
 		}
 	}

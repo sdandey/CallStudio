@@ -11,7 +11,39 @@
 	</properties>
 
 
+	<!-- local repostiory -->
+
+	<repositories>
+		<repository>
+			<id>in-project</id>
+			<name>In Project Repo</name>
+			<url>file:///${basedir}/lib</url>
+		</repository>
+
+	</repositories>
+
+
 	<dependencies>
+
+		<dependency>
+			<groupId>cisco</groupId>
+			<artifactId>framework</artifactId>
+			<version>10.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>microsoft</groupId>
+			<artifactId>sqljdbc</artifactId>
+			<version>4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>10.5</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
