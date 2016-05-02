@@ -19,6 +19,23 @@ public class DynamicFlowService {
 
 	Logger logger = Logger.getLogger(DynamicFlowService.class);
 	
+	
+	private static DynamicFlowService instance = null;
+	
+	public static DynamicFlowService getInstance(){
+		if(instance == null)
+			return new DynamicFlowService();
+		
+		return instance;
+	}
+	
+	private DynamicFlowService(){
+		
+	}
+	
+	
+	
+	
 	public DynamicFlow getDynamicFlowForDnis(String dnisNumber){
 		
 		File dynamicMenujson = new File(this.getClass().getClassLoader().getResource("dynamicmenu.json").getFile());

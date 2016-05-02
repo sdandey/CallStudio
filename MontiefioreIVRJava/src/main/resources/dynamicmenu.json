@@ -28,6 +28,7 @@
 					"menuOptions":{
 						"1":{
 							"menuOptionNumber":1,
+							"menuOptionValue":"patient",
 							"optionType":"SUBMENU",
 							"subMenu":{
 								"menuName":"patientmenu"
@@ -35,6 +36,7 @@
 						},
 						"2":{
 							"menuOptionNumber":2,
+							"menuOptionValue":"provider",
 							"optionType":"SETICMVARS",
 							"setICMVars":{
 								"callTypeForEnglish":"MMGEVA_EVAX_OTHR_EVAX_PROV_E_CT",
@@ -61,16 +63,23 @@
 					"maxTries":"1",
 					"menuOptions":{
 						"1":{
-							"menuOptionNumber":1,
+							"menuOptionNumber":"1",
+							"menuOptionValue":"appointment",
 							"optionType":"SETICMVARS",
-							"transferPrompt":{
-								"promptName":"Trans_Agent.wav",
-								"promptText":"Please stay on the line while we connect to our associate. Your call may be monitored and recorded for quality assurance",
-								"bargein":false
+
+							"setICMVars":{
+								"callTypeForEnglish":"MMGEVA_EVAX_REGI_EVAX_MEMB_E_CT",
+								"callTypeForSpanish":"MMGEVA_EVAX_REGI_EVAX_MEMB_S_CT",
+								"transferPrompt":{
+									"promptName":"Trans_Agent.wav",
+									"promptText":"Please stay on the line while we connect to our associate. Your call may be monitored and recorded for quality assurance",
+									"bargein":false
+								}
 							}
 						},
 						"2":{
-							"menuOptionNumber":2,
+							"menuOptionNumber":"2",
+							"menuOptionValue":"appointment",
 							"optionType":"INFORMATIONPROMPT",
 							"noOfRepeats":2,
 							"informationPrompt":{
@@ -81,7 +90,21 @@
 							}
 						},
 						"3":{
-							"menuOptionNumber":3,
+							"menuOptionNumber":"3",
+							"menuOptionValue":"others",
+							"optionType":"SETICMVARS",
+							"setICMVars":{
+								"callTypeForEnglish":"MMGEVA_EVAX_GENL_EVAX_MEMB_E_CT",
+								"callTypeForSpanish":"MMGEVA_EVAX_GENL_EVAX_MEMB_S_CT",
+								"transferPrompt":{
+									"promptName":"Trans_Agent.wav",
+									"promptText":"Please stay on the line while we connect to our associate. Your call may be monitored and recorded for quality assurance",
+									"bargein":false
+								}
+							}
+						},
+						"maxattempts":{
+							"menuOptionNumber":"maxattempts",
 							"optionType":"SETICMVARS",
 							"setICMVars":{
 								"callTypeForEnglish":"MMGEVA_EVAX_GENL_EVAX_MEMB_E_CT",

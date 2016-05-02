@@ -18,4 +18,24 @@ public class IVRConstants {
 	
 	public static final String S_CALLTYPE = "S_CallType";
 
+	public static final String S_DYNAMICFLOW = "S_DynamicFlow";
+	
+	public static final String S_ISCLOSEDHOURSENABLED = "S_IsClosedHoursEnabled";
+
+	public static final String S_ISLANGUAGEMENUENABLED = "S_IsLanguageMenuEnabled";
+	
+	public static final String S_CLOSEDHOURSPROMPTNAME = "S_ClosedHoursPromptName";
+	
+	public static final String S_CLOSEDHOURSPROMPTTEXT = "S_ClosedHoursPromptText";
+	
+	public static final String S_CLOSEDHOURSTRANSFERNUMBER = "S_ClosedHoursTransfer";
+	
+	public static final String EXITSTATE_DNISNOTFOUND = "dnisNotFound";
+
+	public static final String EXITSTATE_DNISFOUND = "dnisFound";
+	
+	public static final String S_WELCOMEPROMPTNAME = "S_WelcomePromptName";
+	
+	public static final String S_WELCOMEPROMPTTEXT = "S_WelcomePromptText";
+	
 }

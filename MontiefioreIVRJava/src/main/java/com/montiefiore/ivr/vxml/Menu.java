@@ -16,7 +16,7 @@ public class Menu {
 	
 	private Integer maxTries;
 	
-	private Map<Integer, MenuOption> menuOptions;
+	private Map<String, MenuOption> menuOptions;
 	
 	@Override
 	public String toString() {
@@ -59,17 +59,24 @@ public class Menu {
 		this.maxTries = maxTries;
 	}
 
-	public Map<Integer, MenuOption> getMenuOptions() {
+	public Map<String, MenuOption> getMenuOptions() {
 		return menuOptions;
 	}
 
-	public void setMenuOptions(Map<Integer, MenuOption> menuOptions) {
+	public void setMenuOptions(Map<String, MenuOption> menuOptions) {
 		this.menuOptions = menuOptions;
 	}
 
 	public static class MenuOption{
 		
 		Integer menuOptionNumber;
+		String menuOptionValue;
+		public String getMenuOptionValue() {
+			return menuOptionValue;
+		}
+		public void setMenuOptionValue(String menuOptionValue) {
+			this.menuOptionValue = menuOptionValue;
+		}
 		String optionType;
 		Transfer transfer;
 		PlayAudioAndDisconnect playAudioAndDisconnect;
@@ -86,7 +93,8 @@ public class Menu {
 		@Override
 		public String toString() {
 			return "MenuOption [menuOptionNumber=" + menuOptionNumber
-					+ ", optionType=" + optionType + ", transfer=" + transfer
+					+ ", menuOptionValue=" + menuOptionValue + ", optionType="
+					+ optionType + ", transfer=" + transfer
 					+ ", playAudioAndDisconnect=" + playAudioAndDisconnect
 					+ ", setICMVars=" + setICMVars + ", informationPrompt="
 					+ informationPrompt + ", subMenu=" + subMenu + "]";

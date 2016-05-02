@@ -1,11 +1,9 @@
 package com.montiefiore.ivr.dao;
-import static org.junit.Assert.*;
 
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.montiefiore.ivr.dao.DynamicFlowService;
-
 
 public class DynamicFlowServiceTest {
 
@@ -15,14 +13,12 @@ public class DynamicFlowServiceTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		dynamicFlowService = new DynamicFlowService();
+		dynamicFlowService = DynamicFlowService.getInstance();
 	}
 
 	@Test
 	public void testGetDynamicFlowForDnis() {
-		
 		assertNotNull(dynamicFlowService.getDynamicFlowForDnis(VALID_DNIS));
-		
 	}
 
 }
