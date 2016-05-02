@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<voice_element id="Element@28629339:1461129372164" name="TransferTo_9143332044" version="6.0.1">
+<voice_element id="Element@28629339:1461129372164" name="ClosedHours_Transfer" version="6.0.1">
 <config>
 <settings>
-<setting name="transfer_destination">9143332044</setting>
+<setting name="transfer_destination">{Data.Session.S_ClosedHoursTransfer}</setting>
 <setting name="destination_type">tel</setting>
 <setting name="connect_timeout">60s</setting>
 <setting name="max_transfer_time">0s</setting>

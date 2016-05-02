@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<decision_element id="Element@22529418:1462153706315" name="DynamicFlowConfiguration_DE_01" version="6.0.1">
+<config>
+<settings>
+<setting name="Dnis">{Data.Session.Dnis}</setting>
+</settings>
+</config>
+</decision_element>

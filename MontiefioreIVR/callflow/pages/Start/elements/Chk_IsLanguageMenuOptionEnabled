@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<decision id="Element@32512635:1462154485367" name="Chk_IsLanguageMenuOptionEnabled" version="6.0.1">
+<config>
+<source type="Decision Editor"><![CDATA[<knowledge_base>
+    <rule name="Chk_IsLanguageMenuOptionEnabled" default_exit_state="Disabled">
+        <exit_state name="Enabled" conjugate="and">
+            <boolean check_existence="no" value="true">
+                <data>
+                    <session name="S_IsLanguageMenuEnabled" />
+                </data>
+            </boolean>
+        </exit_state>
+    </rule>
+</knowledge_base>]]></source>
+</config>
+</decision>

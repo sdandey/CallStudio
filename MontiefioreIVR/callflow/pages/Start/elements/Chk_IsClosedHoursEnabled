@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<decision id="Element@24761854:1462154852967" name="Chk_IsClosedHoursEnabled" version="6.0.1">
+<config>
+<source type="Decision Editor"><![CDATA[<knowledge_base>
+    <rule name="Decision_01" default_exit_state="disabled">
+        <exit_state name="enabled" conjugate="and">
+            <boolean check_existence="no" value="true">
+                <data>
+                    <session name="S_IsClosedHoursEnabled" />
+                </data>
+            </boolean>
+        </exit_state>
+    </rule>
+</knowledge_base>]]></source>
+</config>
+</decision>

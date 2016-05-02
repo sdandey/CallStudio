@@ -10,12 +10,11 @@
 <setting name="voice_grammar"/>
 <setting name="dtmf_grammar"/>
 <setting name="voice_keyword"/>
-<setting name="dtmf_keypress">1[Patient]</setting>
-<setting name="dtmf_keypress">2[Provider]</setting>
+<setting name="dtmf_keypress"/>
 <setting name="help_voice_keyword"/>
 <setting name="help_dtmf_keypress"/>
 <setting name="modal">false</setting>
-<setting name="field_name">foundation_fld</setting>
+<setting name="field_name">value</setting>
 <setting name="slot_name"/>
 <setting name="slot_element_data"/>
 <setting name="maxnbest">1</setting>
@@ -26,7 +25,7 @@
 <audio_item name="audio item 1" type="static">
 <audio_item_notes/>
 <audio_item_config view_id="default">
-<static default_audio_path="true" uri="GLOB_Patient_Provider_Menu.wav"><![CDATA[if you are a patient press 1, if you are a provier press 2]]></static>
+<static default_audio_path="true" uri="{Data.Session.S_MainMenuPrompt}"><![CDATA[{Data.Session.S_IsMainMenuPromptText}]]></static>
 </audio_item_config>
 </audio_item>
 </audio_group>
