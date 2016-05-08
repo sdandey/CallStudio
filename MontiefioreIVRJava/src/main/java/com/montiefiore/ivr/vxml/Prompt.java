@@ -60,15 +60,8 @@ public class Prompt {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Prompt {\npromptName=");
-		builder.append(promptName);
-		builder.append(", promptText=");
-		builder.append(promptText);
-		builder.append(", bargein=");
-		builder.append(bargein);
-		builder.append("\n}");
-		return builder.toString();
+		return "Prompt [promptName=" + promptName + ", promptText="
+				+ promptText + ", bargein=" + bargein + "]";
 	}
 
 }

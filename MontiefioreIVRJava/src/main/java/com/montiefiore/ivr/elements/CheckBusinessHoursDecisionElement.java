@@ -6,7 +6,9 @@ import com.audium.server.voiceElement.ElementException;
 import com.audium.server.voiceElement.ElementInterface;
 import com.audium.server.voiceElement.ExitState;
 import com.audium.server.voiceElement.Setting;
+import com.audium.server.xml.DecisionElementConfig;
 import com.montiefiore.ivr.IVRConstants;
+import com.montiefiore.ivr.dao.SqlDaoService;
 
 
 public class CheckBusinessHoursDecisionElement extends DecisionElementBase implements ElementInterface{
@@ -87,9 +89,24 @@ public class CheckBusinessHoursDecisionElement extends DecisionElementBase imple
 			throws Exception {
 
 		
+		
+		DecisionElementConfig config = decisionData.getDecisionElementConfig();
+		
+		String dnisNumber = config.getSettingValue(IVRConstants.SETTINGS_DNISNUMBER, decisionData);
+		
+		//The connection URL has to be set based on the environment
+		SqlDaoService sqlDaoService = new SqlDaoService("jdbc:sqlserver://localhost:1433;databaseName=montiefiore", "username here", "passwored here");
+		
+		if(sqlDaoService.checkBusinessOnorOffHours(dnisNumber))
+			return IVRConstants.EXITSTATE_OPEN;
+		else
+			return IVRConstants.EXITSTATE_CLOSED;
+		
+
+		
+		
 		//LOGIC TO RETRIEVE BUSINESS HOURS AND SET TRUE OR FALSE FLAG IS SET IN THIS ELEMENT
 		
-		return IVRConstants.EXITSTATE_OPEN;
 	}
 
 	

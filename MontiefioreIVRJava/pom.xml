@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>microsoft</groupId>
 			<artifactId>sqljdbc</artifactId>
-			<version>4.0</version>
+			<version>4.1</version>
 		</dependency>
 
 		<dependency>
@@ -60,6 +60,12 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.3</version>
 		</dependency>
 
 
