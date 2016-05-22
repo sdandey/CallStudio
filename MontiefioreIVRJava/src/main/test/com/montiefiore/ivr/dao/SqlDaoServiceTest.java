@@ -26,8 +26,12 @@ public class SqlDaoServiceTest {
 
 	@Test
 	public void testIsHoliday() {
-		
+
 		System.out.println("is it a holiday:" + sqlDaoService.isHoliday("8643205630"));
 	}
 
+	@Test
+	public void testIsException() {
+		System.out.println("is it a exception date:" + sqlDaoService.isException("8643205630"));
+	}
 }

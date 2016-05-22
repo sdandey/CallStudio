@@ -1,12 +1,6 @@
 package com.montiefiore.ivr.dao;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Time;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -19,8 +13,8 @@ import org.joda.time.format.DateTimeFormatter;
 
 public class SqlDaoService {
 
-	Logger logger = Logger.getLogger(SqlDaoService.class);
-	Connection connection;
+    final static Logger logger = Logger.getLogger(SqlDaoService.class);
+    private Connection connection;
 
 	
 	public SqlDaoService(String connectionUrl, String username, String password){
@@ -78,11 +72,11 @@ public class SqlDaoService {
 			rs = statement.executeQuery();
 
 
-			String startTime = null;
-			String endTime = null;
-			String openDays = null;
-			
-			DateTime today = new DateTime();
+            String startTime;
+            String endTime;
+            String openDays;
+
+            DateTime today = new DateTime();
 			Time currentTime = new Time(System.currentTimeMillis());
 			
 			logger.info(currentTime.toString());
@@ -188,6 +182,52 @@ public class SqlDaoService {
 	}
 
 
+    public boolean isException(String dnisNumber) {
+
+        String sql = "select * from Exception_date where DNIS = ?";
+        ResultSet rs = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+
+            statement = getConnection().prepareStatement(sql);
+
+            statement.setString(1, dnisNumber);
+            rs = statement.executeQuery();
+
+            String Date_Start = null;
+            String Date_End = null;
+
+
+            while (rs.next()) {
+
+                DateTime today = new DateTime();
+                Time currentTime = new Time(System.currentTimeMillis());
+                logger.info(currentTime.toString());
+                Timestamp startDate = rs.getTimestamp("DATE_START");
+                Timestamp endDate = rs.getTimestamp("DATE_END");
+
+                logger.info("StartDate:" + new DateTime(startDate).toString() + " EndDate:" +
+                        new DateTime(endDate).toString());
+
+
+                if (today.isAfter(startDate.getTime()) && today.isBefore(endDate.getTime())) {
+                    logger.info("call came during exception time");
+                    return true;
+                }
+            }
+
+            logger.info("no records found for the dnis:" + dnisNumber + " keeping it open by default");
+            return false;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        } finally {
+            closeSqlResources(rs, statement, connection);
+        }
+        return false;
+    }
 
 	private void closeSqlResources(ResultSet rs, PreparedStatement statement, Connection connection){
 
