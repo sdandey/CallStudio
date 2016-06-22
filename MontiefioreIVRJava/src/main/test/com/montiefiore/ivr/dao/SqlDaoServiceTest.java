@@ -1,15 +1,11 @@
 package com.montiefiore.ivr.dao;
 
-import static org.junit.Assert.*;
-
-
-
 import org.junit.Before;
 import org.junit.Test;
 
 public class SqlDaoServiceTest {
 
-	
+
 	SqlDaoService sqlDaoService;
 	@Before
 	public void setUp() throws Exception {
@@ -34,4 +30,12 @@ public class SqlDaoServiceTest {
 	public void testIsException() {
 		System.out.println("is it a exception date:" + sqlDaoService.isException("123"));
 	}
+
+	@Test
+	public void testGetPromptText() throws Exception {
+
+		System.out.println(sqlDaoService.getPromptText("123"));
+	}
+
+
 }

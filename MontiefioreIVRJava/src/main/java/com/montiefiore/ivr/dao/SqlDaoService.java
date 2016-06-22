@@ -1,14 +1,15 @@
 package com.montiefiore.ivr.dao;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeComparator;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 
 public class SqlDaoService {
@@ -48,15 +49,11 @@ public class SqlDaoService {
 
 	public boolean checkBusinessOnorOffHours(String dnisNumber){
 
-		if(!isHoliday(dnisNumber) && isNormalBusinessHours(dnisNumber)){
-			return true;
-		}
-		else
-			return false;
-	}
+        return !isHoliday(dnisNumber) && isNormalBusinessHours(dnisNumber);
+    }
 
 
-	private boolean isNormalBusinessHours(String dnisNumber){
+    private boolean isNormalBusinessHours(String dnisNumber){
 
 		String sql = "select * from operatinghours where dnis = ?";
 		ResultSet rs = null;
@@ -137,6 +134,35 @@ public class SqlDaoService {
 		return false;
 
 	}
+
+    public String getPromptText(String dnis) {
+        String prompt = " ";
+
+        String sql = "select * from operatinghours where dnis = ?";
+        ResultSet rs = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+
+        try {
+
+            statement = getConnection().prepareStatement(sql);
+
+            statement.setString(1, dnis);
+            rs = statement.executeQuery();
+
+            while (rs.next()) {
+                prompt = rs.getString("PROMPT");
+                logger.info("Prompt:" + prompt);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeSqlResources(rs, statement, connection);
+        }
+        return prompt;
+    }
 
 
 	public boolean isHoliday(String dnisNumber){

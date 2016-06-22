@@ -37,5 +37,8 @@ public class IVRConstants {
 	public static final String S_WELCOMEPROMPTNAME = "S_WelcomePromptName";
 	
 	public static final String S_WELCOMEPROMPTTEXT = "S_WelcomePromptText";
-	
+
+	public static final String EXITSTATE_FOUND = "Found";
+
+	public static final String EXITSTATE_NOTFOUND = "Notfound";
 }
